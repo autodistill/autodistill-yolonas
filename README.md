@@ -26,13 +26,13 @@ Read the [YOLO-NAS Autodistill documentation](https://autodistill.github.io/auto
 To use the YOLOv5 target model, you will need to install the following dependency:
 
 ```bash
-pip3 install autodistill-yolonas
+pip3 install autodistill-yolo-nas
 ```
 
 ## Quickstart
 
 ```python
-from autodistill_yolonas import YOLONAS
+from autodistill_yolo_nas import YOLONAS
 
 target_model = YOLONAS("YOLOv5n.pt")
 
@@ -41,7 +41,7 @@ target_model = YOLONAS("YOLOv5n.pt")
 target_model.train("./context_images_labeled", epochs=20)
 
 # run inference on the new model
-pred = target_model.predict("./context_images_labeled/train/images/dog-7.jpg", conf=0.01)
+pred = target_model.predict("./context_images_labeled/train/images/dog-7.jpg", confidence=0.01)
 ```
 
 ## License
