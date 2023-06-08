@@ -37,7 +37,8 @@ from autodistill_yolonas import YOLONAS
 target_model = YOLONAS("YOLOv5n.pt")
 
 # train a model
-target_model.train("./context_images_labeled/data.yaml", epochs=200)
+# specify the directory where your annotations (in YOLO format) are stored
+target_model.train("./context_images_labeled", epochs=20)
 
 # run inference on the new model
 pred = target_model.predict("./context_images_labeled/train/images/dog-7.jpg", conf=0.01)
@@ -45,7 +46,7 @@ pred = target_model.predict("./context_images_labeled/train/images/dog-7.jpg", c
 
 ## License
 
-The code in this repository is licensed under an 
+The YOLO-NAS model is licensed under the [YOLO-NAS License](https://github.com/Deci-AI/super-gradients/blob/master/LICENSE.YOLONAS.md).
 
 ## 🏆 Contributing
 
