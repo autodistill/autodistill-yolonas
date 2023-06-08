@@ -11,6 +11,10 @@ from super_gradients.training.metrics import DetectionMetrics_050
 from super_gradients.training.models.detection_models.pp_yolo_e import \
     PPYoloEPostPredictionCallback
 
+# necessary to prevent an error in the super_gradients library
+import collections
+collections.Iterable = collections.abc.Iterable
+
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
 HOME = os.path.expanduser("~")
@@ -34,16 +38,10 @@ class YOLONAS(DetectionTargetModel):
 
         result = list(self.yolonas.predict(input, conf=confidence))[0]
 
-        detections = sv.Detections(
-            xyxy=result.prediction.bboxes_xyxy,
-            confidence=result.prediction.confidence,
-            class_id=result.prediction.labels.astype(int),
-        )
+        return sv.Detections.from_yolo_nas(result)
 
-        return detections
-
-    def train(self, dataset_location: str, classes: str, epochs: int = 25):
-        data = sv.DetectionDataset.from_yolo(dataset_location)
+    def train(self, dataset_location: str, epochs: int = 25):
+        data = sv.DetectionDataset.from_yolo(annotations_directory_path=dataset_location, data_yaml_path=dataset_location.strip("/") + "/data.yaml", images_directory_path=dataset_location)
         classes = data.classes
         self.classes = classes
         self.dataset_location = dataset_location

@@ -3,7 +3,7 @@ import re
 import setuptools
 from setuptools import find_packages
 
-with open("./autodistill_yolonas/__init__.py", "r") as f:
+with open("./autodistill_yolo_nas/__init__.py", "r") as f:
     content = f.read()
     # from https://www.py4u.net/discuss/139845
     version = re.search(r'__version__\s*=\s*[\'"]([^\'"]*)[\'"]', content).group(1)
@@ -12,7 +12,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="autodistill-yolonas",
+    name="autodistill-yolo-nas",
     version=version,
     author="Roboflow",
     author_email="support@roboflow.com",
