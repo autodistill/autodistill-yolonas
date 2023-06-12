@@ -3,7 +3,7 @@
     <a align="center" href="" target="_blank">
       <img
         width="850"
-        src="https://media.roboflow.com/open-source/autodistill/autodistill-banner.png"
+        src="https://media.roboflow.com/open-source/autodistill/autodistill-banner.png?3"
       >
     </a>
   </p>
@@ -26,7 +26,7 @@ Read the [YOLO-NAS Autodistill documentation](https://autodistill.github.io/auto
 To use the YOLOv5 target model, you will need to install the following dependency:
 
 ```bash
-pip3 install autodistill-yolo-nas
+pip3 install autodistill-yolonas
 ```
 
 ## Quickstart
