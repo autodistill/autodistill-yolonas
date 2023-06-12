@@ -32,7 +32,7 @@ pip3 install autodistill-yolonas
 ## Quickstart
 
 ```python
-from autodistill_yolo_nas import YOLONAS
+from autodistill_yolonas import YOLONAS
 
 target_model = YOLONAS("YOLOv5n.pt")
 
