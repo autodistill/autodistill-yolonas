@@ -34,7 +34,7 @@ pip3 install autodistill-yolonas
 ```python
 from autodistill_yolonas import YOLONAS
 
-target_model = YOLONAS("YOLOv5n.pt")
+target_model = YOLONAS()
 
 # train a model
 # specify the directory where your annotations (in YOLO format) are stored
