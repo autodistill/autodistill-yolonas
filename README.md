@@ -23,7 +23,7 @@ Read the [YOLO-NAS Autodistill documentation](https://autodistill.github.io/auto
 
 ## Installation
 
-To use the YOLOv5 target model, you will need to install the following dependency:
+To use the YOLO-NAS target model, you will need to install the following dependency:
 
 ```bash
 pip3 install autodistill-yolonas
